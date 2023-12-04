@@ -27,19 +27,23 @@ class tool extends Skill{
 
 class Player{
     String name;
-    Skill attack = new attack();
-    Skill magic = new magic();
-    Skill tool = new tool();
+    Skill attack;
+    Skill magic;
+    Skill tool;
     Player(String name){
         this.name = name;
+        this.attack = new attack();
+        this.magic = new magic();
+        this.tool = new tool();
     }
 }
 
 public class Main2 {
     public static void main(String[] args) {
         Player tarou = new Player("tarou");
-        tarou.attack.invoke(tarou.name);
-        tarou.magic.invoke(tarou.name);
-        tarou.tool.invoke(tarou.name);
+        String tname = tarou.name;
+        tarou.attack.invoke(tname);
+        tarou.magic.invoke(tname);
+        tarou.tool.invoke(tname);
     }
 }
